@@ -1,0 +1,2 @@
+# workflow_endpoint2_scene_generation.json
+Dockerized ComfyUI workflow: workflow_endpoint2_scene_generation.json
