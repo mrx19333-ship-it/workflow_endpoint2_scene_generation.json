@@ -1,0 +1,1546 @@
+{
+  "input": {
+    "workflow": {
+      "190": {
+        "inputs": {
+          "text": "model",
+          "MODEL": [
+            "547",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_model"
+        }
+      },
+      "191": {
+        "inputs": {
+          "text": "clip",
+          "CLIP": [
+            "362",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_clip"
+        }
+      },
+      "192": {
+        "inputs": {
+          "text": "vae",
+          "VAE": [
+            "360",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_vae"
+        }
+      },
+      "194": {
+        "inputs": {
+          "text": "input_image",
+          "IMAGE": [
+            "675",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_input_image"
+        }
+      },
+      "213": {
+        "inputs": {
+          "image": "Runcomfy_example_1277.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "320": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "by Mickmumpitz"
+        }
+      },
+      "321": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "Modular Groups"
+        }
+      },
+      "323": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "Input / Output / Model Loaders"
+        }
+      },
+      "324": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "329": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "331": {
+        "inputs": {},
+        "class_type": "Reroute",
+        "_meta": {
+          "title": "Reroute"
+        }
+      },
+      "332": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "Important Notes!"
+        }
+      },
+      "333": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "CONSISTENT CHARACTER CREATOR 3.0"
+        }
+      },
+      "360": {
+        "inputs": {
+          "filename": "qwen/qwen_image_vae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "362": {
+        "inputs": {
+          "filename": "qwen/qwen_2.5_vl_7b_fp8_scaled.safetensors"
+        },
+        "class_type": "CLIPLoader",
+        "_meta": {
+          "title": "CLIPLoader"
+        }
+      },
+      "363": {
+        "inputs": {
+          "filename": "qwen/qwen_image_edit_fp8_e4m3fn.safetensors"
+        },
+        "class_type": "UNETLoader",
+        "_meta": {
+          "title": "UNETLoader"
+        }
+      },
+      "453": {
+        "inputs": {
+          "filename_prefix": [
+            "669",
+            0
+          ],
+          "images": [
+            "463",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "454": {
+        "inputs": {
+          "text": "clip"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_clip"
+        }
+      },
+      "455": {
+        "inputs": {
+          "text": "input_image"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_input_image"
+        }
+      },
+      "456": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "457": {
+        "inputs": {
+          "text": "model"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_model"
+        }
+      },
+      "458": {
+        "inputs": {
+          "text": "vae"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_vae"
+        }
+      },
+      "459": {
+        "inputs": {
+          "seed": 1034973049061637,
+          "steps": [
+            "572",
+            0
+          ],
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "457",
+            0
+          ],
+          "positive": [
+            "461",
+            0
+          ],
+          "negative": [
+            "461",
+            0
+          ],
+          "latent_image": [
+            "456",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "460": {
+        "inputs": {
+          "image": [
+            "455",
+            0
+          ]
+        },
+        "class_type": "FluxKontextImageScale",
+        "_meta": {
+          "title": "FluxKontextImageScale"
+        }
+      },
+      "461": {
+        "inputs": {
+          "filename": "Make the character sit in a park on a sunny day. The character is looking up into the sky, low angle shot.",
+          "clip": [
+            "454",
+            0
+          ],
+          "vae": [
+            "458",
+            0
+          ],
+          "image": [
+            "460",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEdit",
+        "_meta": {
+          "title": "TextEncodeQwenImageEdit"
+        }
+      },
+      "462": {
+        "inputs": {
+          "text": "scene-03",
+          "IMAGE": [
+            "463",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_scene-03"
+        }
+      },
+      "463": {
+        "inputs": {
+          "samples": [
+            "459",
+            0
+          ],
+          "vae": [
+            "458",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "488": {
+        "inputs": {
+          "filename_prefix": [
+            "670",
+            0
+          ],
+          "images": [
+            "496",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "489": {
+        "inputs": {
+          "text": "clip"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_clip"
+        }
+      },
+      "490": {
+        "inputs": {
+          "text": "input_image"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_input_image"
+        }
+      },
+      "491": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "492": {
+        "inputs": {
+          "text": "model"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_model"
+        }
+      },
+      "493": {
+        "inputs": {
+          "text": "vae"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_vae"
+        }
+      },
+      "494": {
+        "inputs": {
+          "image": [
+            "490",
+            0
+          ]
+        },
+        "class_type": "FluxKontextImageScale",
+        "_meta": {
+          "title": "FluxKontextImageScale"
+        }
+      },
+      "495": {
+        "inputs": {
+          "text": "scene-04",
+          "IMAGE": [
+            "496",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_scene-04"
+        }
+      },
+      "496": {
+        "inputs": {
+          "samples": [
+            "497",
+            0
+          ],
+          "vae": [
+            "493",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "497": {
+        "inputs": {
+          "seed": 1034973049061639,
+          "steps": [
+            "573",
+            0
+          ],
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "492",
+            0
+          ],
+          "positive": [
+            "498",
+            0
+          ],
+          "negative": [
+            "498",
+            0
+          ],
+          "latent_image": [
+            "491",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "498": {
+        "inputs": {
+          "filename": "Make the character walk in a modern city street. Full body view. Rainy day with overcast lighting.   ",
+          "clip": [
+            "489",
+            0
+          ],
+          "vae": [
+            "493",
+            0
+          ],
+          "image": [
+            "494",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEdit",
+        "_meta": {
+          "title": "TextEncodeQwenImageEdit"
+        }
+      },
+      "515": {
+        "inputs": {
+          "filename": "A professional photography of a young person. "
+        },
+        "class_type": "StringConstantMultiline",
+        "_meta": {
+          "title": "PROMPT (One Sentence: Describe style, character, clothes...)"
+        }
+      },
+      "516": {
+        "inputs": {
+          "text": "Description",
+          "STRING": [
+            "515",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_Description"
+        }
+      },
+      "518": {
+        "inputs": {
+          "filename_prefix": [
+            "668",
+            0
+          ],
+          "images": [
+            "523",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "519": {
+        "inputs": {
+          "text": "clip"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_clip"
+        }
+      },
+      "520": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "521": {
+        "inputs": {
+          "text": "model"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_model"
+        }
+      },
+      "522": {
+        "inputs": {
+          "text": "vae"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_vae"
+        }
+      },
+      "523": {
+        "inputs": {
+          "samples": [
+            "529",
+            0
+          ],
+          "vae": [
+            "522",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "526": {
+        "inputs": {
+          "image": [
+            "9001",
+            0
+          ]
+        },
+        "class_type": "FluxKontextImageScale",
+        "_meta": {
+          "title": "FluxKontextImageScale"
+        }
+      },
+      "528": {
+        "inputs": {
+          "filename": "Make the character wear a blue oversized hoodie and grey sweatpants. Keep the Composition and character exactly the same.  ",
+          "clip": [
+            "519",
+            0
+          ],
+          "vae": [
+            "522",
+            0
+          ],
+          "image": [
+            "526",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEdit",
+        "_meta": {
+          "title": "TextEncodeQwenImageEdit"
+        }
+      },
+      "529": {
+        "inputs": {
+          "seed": 1034973049061640,
+          "steps": [
+            "571",
+            0
+          ],
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "521",
+            0
+          ],
+          "positive": [
+            "528",
+            0
+          ],
+          "negative": [
+            "528",
+            0
+          ],
+          "latent_image": [
+            "520",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "531": {
+        "inputs": {
+          "text": "vton",
+          "IMAGE": [
+            "523",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_vton"
+        }
+      },
+      "538": {
+        "inputs": {
+          "width": 1024,
+          "height": 512,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "546": {
+        "inputs": {
+          "filename": "gguf/Qwen_Image_Edit-Q5_1.gguf"
+        },
+        "class_type": "LoaderGGUF",
+        "_meta": {
+          "title": "LoaderGGUF"
+        }
+      },
+      "547": {
+        "inputs": {
+          "filename": "qwen/Qwen-Image-Lightning-4steps-V1.0-bf16.safetensors",
+          "model": [
+            "546",
+            0
+          ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+          "title": "LoraLoaderModelOnly"
+        }
+      },
+      "552": {
+        "inputs": {
+          "value": 1,
+          "input1": [
+            "547",
+            0
+          ],
+          "input2": [
+            "363",
+            0
+          ]
+        },
+        "class_type": "ImpactSwitch",
+        "_meta": {
+          "title": "1 - GGUF / 2 FP8"
+        }
+      },
+      "553": {
+        "inputs": {
+          "value": 4
+        },
+        "class_type": "PrimitiveInt",
+        "_meta": {
+          "title": "PrimitiveInt"
+        }
+      },
+      "554": {
+        "inputs": {
+          "value": 20
+        },
+        "class_type": "PrimitiveInt",
+        "_meta": {
+          "title": "PrimitiveInt"
+        }
+      },
+      "555": {
+        "inputs": {
+          "value": 1,
+          "input1": [
+            "553",
+            0
+          ],
+          "select": [
+            "552",
+            2
+          ],
+          "input2": [
+            "554",
+            0
+          ]
+        },
+        "class_type": "ImpactSwitch",
+        "_meta": {
+          "title": "ImpactSwitch"
+        }
+      },
+      "556": {
+        "inputs": {
+          "text": "stepCount",
+          "*": [
+            "555",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_stepCount"
+        }
+      },
+      "557": {
+        "inputs": {},
+        "class_type": "Fast Groups Muter (rgthree)",
+        "_meta": {
+          "title": "Fast Groups Muter (rgthree)"
+        }
+      },
+      "571": {
+        "inputs": {
+          "text": "stepCount"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_stepCount"
+        }
+      },
+      "572": {
+        "inputs": {
+          "text": "stepCount"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_stepCount"
+        }
+      },
+      "573": {
+        "inputs": {
+          "text": "stepCount"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_stepCount"
+        }
+      },
+      "575": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "→"
+        }
+      },
+      "576": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "→"
+        }
+      },
+      "577": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "→"
+        }
+      },
+      "578": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "→"
+        }
+      },
+      "579": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "→"
+        }
+      },
+      "580": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "→"
+        }
+      },
+      "581": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "→"
+        }
+      },
+      "582": {
+        "inputs": {},
+        "class_type": "Label (rgthree)",
+        "_meta": {
+          "title": "→"
+        }
+      },
+      "588": {
+        "inputs": {
+          "text": "RunComfy_Example_1"
+        },
+        "class_type": "PrimitiveStringMultiline",
+        "_meta": {
+          "title": "NAME"
+        }
+      },
+      "589": {
+        "inputs": {
+          "text": "name",
+          "STRING": [
+            "588",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_name"
+        }
+      },
+      "617": {
+        "inputs": {
+          "text": "clip"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_clip"
+        }
+      },
+      "618": {
+        "inputs": {
+          "text": "input_image"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_input_image"
+        }
+      },
+      "619": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "620": {
+        "inputs": {
+          "text": "model"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_model"
+        }
+      },
+      "621": {
+        "inputs": {
+          "text": "vae"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_vae"
+        }
+      },
+      "622": {
+        "inputs": {
+          "seed": 1034973049061636,
+          "steps": [
+            "626",
+            0
+          ],
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "620",
+            0
+          ],
+          "positive": [
+            "629",
+            0
+          ],
+          "negative": [
+            "629",
+            0
+          ],
+          "latent_image": [
+            "619",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "623": {
+        "inputs": {
+          "image": [
+            "618",
+            0
+          ]
+        },
+        "class_type": "FluxKontextImageScale",
+        "_meta": {
+          "title": "FluxKontextImageScale"
+        }
+      },
+      "624": {
+        "inputs": {
+          "text": "scene-01",
+          "IMAGE": [
+            "625",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_scene-01"
+        }
+      },
+      "625": {
+        "inputs": {
+          "samples": [
+            "622",
+            0
+          ],
+          "vae": [
+            "621",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "626": {
+        "inputs": {
+          "text": "stepCount"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_stepCount"
+        }
+      },
+      "627": {
+        "inputs": {
+          "value": 2,
+          "string_1": [
+            "631",
+            0
+          ],
+          "string_2": [
+            "628",
+            0
+          ]
+        },
+        "class_type": "JoinStringMulti",
+        "_meta": {
+          "title": "JoinStringMulti"
+        }
+      },
+      "628": {
+        "inputs": {
+          "text": "Description"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_Description"
+        }
+      },
+      "629": {
+        "inputs": {
+          "filename": "Create a side view of the head showing the characters profile. Keep the style and facial proportions the same. In front of a white background. Close up of the head.",
+          "clip": [
+            "617",
+            0
+          ],
+          "vae": [
+            "621",
+            0
+          ],
+          "image": [
+            "623",
+            0
+          ],
+          "prompt": [
+            "627",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEdit",
+        "_meta": {
+          "title": "TextEncodeQwenImageEdit"
+        }
+      },
+      "630": {
+        "inputs": {
+          "filename_prefix": [
+            "664",
+            0
+          ],
+          "images": [
+            "625",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "631": {
+        "inputs": {
+          "filename": "Using the style of the image, put this character in a tropical rainforest during sunset holding a tropical cocktail in their hand. The sunlight illuminates the smiling face. The character is happy. Keep the facial features exactly the same."
+        },
+        "class_type": "StringConstantMultiline",
+        "_meta": {
+          "title": "StringConstantMultiline"
+        }
+      },
+      "632": {
+        "inputs": {
+          "text": "clip"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_clip"
+        }
+      },
+      "633": {
+        "inputs": {
+          "text": "input_image"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_input_image"
+        }
+      },
+      "634": {
+        "inputs": {
+          "width": 1024,
+          "height": 1024,
+          "batch_size": 1
+        },
+        "class_type": "EmptySD3LatentImage",
+        "_meta": {
+          "title": "EmptySD3LatentImage"
+        }
+      },
+      "635": {
+        "inputs": {
+          "text": "model"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_model"
+        }
+      },
+      "636": {
+        "inputs": {
+          "text": "vae"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_vae"
+        }
+      },
+      "637": {
+        "inputs": {
+          "seed": 1034973049061636,
+          "steps": [
+            "641",
+            0
+          ],
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "635",
+            0
+          ],
+          "positive": [
+            "644",
+            0
+          ],
+          "negative": [
+            "644",
+            0
+          ],
+          "latent_image": [
+            "634",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "638": {
+        "inputs": {
+          "image": [
+            "633",
+            0
+          ]
+        },
+        "class_type": "FluxKontextImageScale",
+        "_meta": {
+          "title": "FluxKontextImageScale"
+        }
+      },
+      "639": {
+        "inputs": {
+          "text": "scene-02",
+          "IMAGE": [
+            "640",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_scene-02"
+        }
+      },
+      "640": {
+        "inputs": {
+          "samples": [
+            "637",
+            0
+          ],
+          "vae": [
+            "636",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "641": {
+        "inputs": {
+          "text": "stepCount"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_stepCount"
+        }
+      },
+      "642": {
+        "inputs": {
+          "value": 2,
+          "string_1": [
+            "646",
+            0
+          ],
+          "string_2": [
+            "643",
+            0
+          ]
+        },
+        "class_type": "JoinStringMulti",
+        "_meta": {
+          "title": "JoinStringMulti"
+        }
+      },
+      "643": {
+        "inputs": {
+          "text": "Description"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_Description"
+        }
+      },
+      "644": {
+        "inputs": {
+          "filename": "Create a side view of the head showing the characters profile. Keep the style and facial proportions the same. In front of a white background. Close up of the head.",
+          "clip": [
+            "632",
+            0
+          ],
+          "vae": [
+            "636",
+            0
+          ],
+          "image": [
+            "638",
+            0
+          ],
+          "prompt": [
+            "642",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEdit",
+        "_meta": {
+          "title": "TextEncodeQwenImageEdit"
+        }
+      },
+      "645": {
+        "inputs": {
+          "filename_prefix": [
+            "665",
+            0
+          ],
+          "images": [
+            "640",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "646": {
+        "inputs": {
+          "filename": "Using the style of the image, put the character in a spooky castle at night. The characters face is illuminated by dim candlelight. The strong moonlight creates a strong backlight creating a dramatic look. The moonlight is reflecting from the skin. Keep the proportions ecactly the same. "
+        },
+        "class_type": "StringConstantMultiline",
+        "_meta": {
+          "title": "StringConstantMultiline"
+        }
+      },
+      "647": {
+        "inputs": {
+          "text": "clip"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_clip"
+        }
+      },
+      "648": {
+        "inputs": {
+          "text": "input_image"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_input_image"
+        }
+      },
+      "650": {
+        "inputs": {
+          "text": "model"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_model"
+        }
+      },
+      "651": {
+        "inputs": {
+          "text": "vae"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_vae"
+        }
+      },
+      "652": {
+        "inputs": {
+          "seed": 1034973049061636,
+          "steps": [
+            "656",
+            0
+          ],
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "simple",
+          "denoise": 1,
+          "model": [
+            "650",
+            0
+          ],
+          "positive": [
+            "659",
+            0
+          ],
+          "negative": [
+            "659",
+            0
+          ],
+          "latent_image": [
+            "538",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "653": {
+        "inputs": {
+          "image": [
+            "648",
+            0
+          ]
+        },
+        "class_type": "FluxKontextImageScale",
+        "_meta": {
+          "title": "FluxKontextImageScale"
+        }
+      },
+      "654": {
+        "inputs": {
+          "text": "conceptart",
+          "IMAGE": [
+            "655",
+            0
+          ]
+        },
+        "class_type": "SetNode",
+        "_meta": {
+          "title": "Set_conceptart"
+        }
+      },
+      "655": {
+        "inputs": {
+          "samples": [
+            "652",
+            0
+          ],
+          "vae": [
+            "651",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "656": {
+        "inputs": {
+          "text": "stepCount"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_stepCount"
+        }
+      },
+      "657": {
+        "inputs": {
+          "value": 2,
+          "string_1": [
+            "661",
+            0
+          ],
+          "string_2": [
+            "658",
+            0
+          ]
+        },
+        "class_type": "JoinStringMulti",
+        "_meta": {
+          "title": "JoinStringMulti"
+        }
+      },
+      "658": {
+        "inputs": {
+          "text": "Description"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_Description"
+        }
+      },
+      "659": {
+        "inputs": {
+          "filename": "Create a side view of the head showing the characters profile. Keep the style and facial proportions the same. In front of a white background. Close up of the head.",
+          "clip": [
+            "647",
+            0
+          ],
+          "vae": [
+            "651",
+            0
+          ],
+          "image": [
+            "653",
+            0
+          ],
+          "prompt": [
+            "657",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEdit",
+        "_meta": {
+          "title": "TextEncodeQwenImageEdit"
+        }
+      },
+      "660": {
+        "inputs": {
+          "filename_prefix": [
+            "666",
+            0
+          ],
+          "images": [
+            "655",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "661": {
+        "inputs": {
+          "filename": "A wide shot of the character sitting on a rock at the beach. "
+        },
+        "class_type": "StringConstantMultiline",
+        "_meta": {
+          "title": "StringConstantMultiline"
+        }
+      },
+      "664": {
+        "inputs": {
+          "text": "name"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_name"
+        }
+      },
+      "665": {
+        "inputs": {
+          "text": "name"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_name"
+        }
+      },
+      "666": {
+        "inputs": {
+          "text": "name"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_name"
+        }
+      },
+      "668": {
+        "inputs": {
+          "text": "name"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_name"
+        }
+      },
+      "669": {
+        "inputs": {
+          "text": "name"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_name"
+        }
+      },
+      "670": {
+        "inputs": {
+          "text": "name"
+        },
+        "class_type": "GetNode",
+        "_meta": {
+          "title": "Get_name"
+        }
+      },
+      "674": {
+        "inputs": {
+          "text": "lanczos",
+          "image": [
+            "213",
+            0
+          ]
+        },
+        "class_type": "ImageScaleToTotalPixels",
+        "_meta": {
+          "title": "ImageScaleToTotalPixels"
+        }
+      },
+      "675": {
+        "inputs": {
+          "image": [
+            "674",
+            0
+          ]
+        },
+        "class_type": "GetImageSizeAndCount",
+        "_meta": {
+          "title": "GetImageSizeAndCount"
+        }
+      },
+      "9001": {
+        "inputs": {
+          "image": "t-pose.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "Load T-Pose (from Endpoint 1)"
+        }
+      }
+    }
+  }
+}
